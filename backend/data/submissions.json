@@ -1,0 +1,46 @@
+{
+  "S10485739": {
+    "student_id": "S10485739",
+    "filename": "S10485739_Alice.pdf",
+    "extracted_text": "Student ID:  10485739 (Alice)  \nUnit:  COS10004 - Computer Systems  \nTo ensure optimal database performance, normalization is utilized to reduce data \nredundancy and maintain data integrity. The process begins with 1NF, ensuring \natomic values. Moving to 2NF eliminates partial dependencies. 3NF further refines \nthis by removing transitive dependencies. BCNF acts as a stricter version of 3NF, \nwhere every determinant must be a candidate key.  \nFor efficient data retrieval, a B -tree index is highly versatile, supporting sequential \naccess in logarithmic time. Hash indexing is preferable for constant -time average \nlookups. Clustered indexes dictate the physical order of data on disk, while non -\nclustered indexes use separate structures with pointers.  \nMemory allocation handles assigning physical and virtual space. The stack uses a \nlast-in-first-out structure to automatically manage function call frames, while the heap \nhandles dynamic memory. To maximize resources, virtual memory relies on page \ntables to map virtual addresses to physical frames, using demand paging and \nreplacement algorithms like LRU.  ",
+    "score": 54,
+    "draft_feedback": "Alice, you have a solid grasp of the core definitions for normalization, indexing types, and basic memory management concepts like paging and the stack/heap distinction. To improve your score, you should include practical examples to demonstrate these concepts in action and discuss the 'why' behind them, such as how normalization prevents specific data anomalies or the trade-offs involved in indexing. Additionally, expanding on memory management to include segmentation and fragmentation would provide a more comprehensive overview of the topic.",
+    "plagiarism_risk_score": 0.0,
+    "plagiarism_flagged": false,
+    "uploaded_at": "2026-03-30T12:30:07.922202+00:00",
+    "graded_at": "2026-03-30T12:30:17.310465+00:00"
+  },
+  "S10492811": {
+    "student_id": "S10492811",
+    "filename": "S10492811_David.pdf",
+    "extracted_text": "Student ID:  10492811 (David)  \nUnit:  COS10004 - Computer Systems  \nNormalization is a very important part of making a database look clean. When you \nhave a lot of data, you don't want it to be messy or have the same thing typed out \ntwice, so you normalize it by splitting it up into different sheets.  \nIndexing is another way to make databases better. If you want to find a specific row \nof data, the database just looks at the index instead of reading the whole thing. You \ncan index different columns depending on what you search for the most, which \nspeeds up the whole computer.  \nMemory allocation is how the computer decides where to put files and programs. \nWhen you open a program, it gets loaded into the RAM so the computer can work on \nit quickly. If you run out of RAM, the computer gets really slow and might crash. \nSome computers have special software that clears out old memory automatically.  \n ",
+    "score": 20,
+    "draft_feedback": "David, you have a clear understanding of the high-level goals of these concepts, such as how indexing improves search speed and normalization reduces data redundancy. However, the submission lacks the technical detail required by the rubric, specifically missing explanations of the three normal forms (1NF, 2NF, 3NF) and memory management techniques like paging and segmentation. To improve, I recommend revisiting the specific structures of B-tree indexes and studying the differences between internal and external fragmentation in memory allocation.",
+    "plagiarism_risk_score": 25.4,
+    "plagiarism_flagged": false,
+    "uploaded_at": "2026-03-30T12:30:31.988392+00:00",
+    "graded_at": "2026-03-30T12:30:39.628159+00:00"
+  },
+  "S10499221": {
+    "student_id": "S10499221",
+    "filename": "S10499221_Bob.pdf",
+    "extracted_text": "Student ID:  10499221 (Bob)  \nUnit:  COS10004 - Computer Systems  \nTo guarantee great database performance, normalization is used to lower data \nredundancy and keep data integrity. The method starts with 1NF, making sure we \nhave atomic values. Moving to 2NF gets rid of partial dependencies. 3NF then \nrefines this by deleting transitive dependencies. BCNF acts as a harder version of \n3NF, where all determinants must be a candidate key.  \nFor fast data retrieval, a B -tree index is very versatile, allowing sequential access in \nlogarithmic time. Hash indexing is better for constant -time lookups. Clustered \nindexes decide the physical order of data, while non -clustered indexes use different \nstructures with pointers.  \nMemory allocation manages assigning physical and virtual memory space. The stack \nuses a LIFO structure to manage function call frames, while the heap manages \ndynamic memory. To save resources, virtual memory uses page tables to map \nvirtual addresses to physical frames, utilizing demand paging and replacement \nalgorithms such as LRU.  \n ",
+    "score": 51,
+    "draft_feedback": "Bob, you have provided a solid foundation of definitions for normalization and indexing, particularly regarding the different normal forms and the mechanics of B-trees versus hash indexes. To improve your score, you should include practical examples to demonstrate these concepts in action and discuss the trade-offs involved, such as how indexing affects write performance. Additionally, your section on memory management would benefit from a discussion on segmentation and the distinction between internal and external fragmentation.",
+    "plagiarism_risk_score": 2.3,
+    "plagiarism_flagged": false,
+    "uploaded_at": "2026-03-30T12:30:44.237870+00:00",
+    "graded_at": "2026-03-30T12:30:53.572075+00:00"
+  },
+  "S10511334": {
+    "student_id": "S10511334",
+    "filename": "S10511334_Charlie.pdf",
+    "extracted_text": "Student ID:  10511334 (Charlie)  \nUnit:  COS10004 - Computer Systems  \nNormalization is important to stop data from repeating. First Normal Form makes \nsure all the columns have single values. Second Normal Form stops partial \ndependencies, and Third Normal Form stops transitive dependencies. This keeps \nthe database tables organized.  \nIndexing helps us find data faster, like an index in a book. A B -tree index keeps the \ndata sorted so searches are quick. We can also use clustered indexes to change \nhow the data is physically saved on the hard drive, but you can only have one of \nthese per table.  \nWhen running programs, the computer uses memory allocation. Static memory is set \nwhen the program compiles. Dynamic memory is used when the program is actually \nrunning. Sometimes memory gets fragmented when it is broken into small pieces, \nwhich makes the computer less efficient. We use virtual memory to pretend we have \nmore RAM than we actually do.  \n ",
+    "score": 32,
+    "draft_feedback": "Charlie, you have a solid grasp of the basic definitions for the three normal forms and the general purpose of database indexing. To improve your score, you should provide practical examples for normalization and discuss the trade-offs of indexing, such as the impact on write performance. Most importantly, your section on memory management needs to be expanded to include specific details on paging, segmentation, and the differences between internal and external fragmentation.",
+    "plagiarism_risk_score": -11.6,
+    "plagiarism_flagged": false,
+    "uploaded_at": "2026-03-30T12:30:57.510704+00:00",
+    "graded_at": "2026-03-30T12:31:06.272740+00:00"
+  }
+}
