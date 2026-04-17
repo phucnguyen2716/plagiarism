@@ -38,5 +38,13 @@ class SubmissionStore:
             if sid != exclude_id and sub.extracted_text
         ]
 
+    def get_all_submissions_except(self, exclude_id: str) -> dict[str, str]:
+        """Returns {student_id: extracted_text} for all submissions except exclude_id."""
+        return {
+            sid: sub.extracted_text
+            for sid, sub in self._store.items()
+            if sid != exclude_id and sub.extracted_text
+        }
+
 
 store = SubmissionStore()

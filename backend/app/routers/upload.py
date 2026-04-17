@@ -38,8 +38,8 @@ async def upload_submission(file: UploadFile = File(...)):
             detail="Could not extract any text from the PDF. The file may be image-based or empty.",
         )
 
-    other_texts = store.get_all_texts_except(student_id)
-    plagiarism_risk_score = check_plagiarism(extracted_text, other_texts)
+    other_submissions = store.get_all_submissions_except(student_id)
+    plagiarism_risk_score, matched_keywords, most_similar_to = check_plagiarism(extracted_text, other_submissions)
     plagiarism_flagged = plagiarism_risk_score >= 50.0
 
     submission = Submission(
@@ -48,6 +48,8 @@ async def upload_submission(file: UploadFile = File(...)):
         extracted_text=extracted_text,
         plagiarism_risk_score=round(plagiarism_risk_score, 1),
         plagiarism_flagged=plagiarism_flagged,
+        plagiarism_matched_keywords=matched_keywords,
+        plagiarism_most_similar_to=most_similar_to,
         uploaded_at=datetime.now(timezone.utc).isoformat(),
     )
     store.upsert(submission)

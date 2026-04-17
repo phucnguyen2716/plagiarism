@@ -1,4 +1,4 @@
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager  # reload: similar_to list sync
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import upload, grading, submissions
@@ -23,3 +23,7 @@ app.add_middleware(
 app.include_router(upload.router, prefix="/api")
 app.include_router(grading.router, prefix="/api")
 app.include_router(submissions.router, prefix="/api")
+
+# Trigger reload
+
+# reload trigger

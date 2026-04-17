@@ -20,6 +20,8 @@ async def list_submissions():
                 draft_feedback=sub.draft_feedback,
                 plagiarism_risk_score=sub.plagiarism_risk_score,
                 plagiarism_flagged=sub.plagiarism_flagged,
+                plagiarism_matched_keywords=sub.plagiarism_matched_keywords,
+                plagiarism_most_similar_to=sub.plagiarism_most_similar_to,
                 graded_at=sub.graded_at,
             )
         )

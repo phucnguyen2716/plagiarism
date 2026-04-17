@@ -6,6 +6,8 @@ export interface Submission {
   draft_feedback: string | null;
   plagiarism_risk_score: number;
   plagiarism_flagged: boolean;
+  plagiarism_matched_keywords: string[];
+  plagiarism_most_similar_to: string[];
   graded_at: string | null;
 }
 

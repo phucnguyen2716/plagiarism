@@ -1,5 +1,4 @@
 import re
-from rank_bm25 import BM25Okapi
 
 STOPWORDS = {
     "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
@@ -22,31 +21,66 @@ def _tokenize(text: str) -> list[str]:
     return [t for t in tokens if t not in STOPWORDS and len(t) > 1]
 
 
-def check_plagiarism(new_text: str, other_texts: list[str]) -> float:
-    if not other_texts:
-        return 0.0
+def check_plagiarism(
+    new_text: str,
+    other_submissions: dict[str, str],
+) -> tuple[float, list[str], list[str]]:
+    """
+    Returns (max_overlap_pct, top_keywords, similar_student_ids).
+    other_submissions: {student_id: extracted_text}
+    Returns a list of student IDs that have overlap >= 15%.
+    """
+    if not other_submissions:
+        return 0.0, [], []
 
     new_tokens = _tokenize(new_text)
     if not new_tokens:
-        return 0.0
+        return 0.0, [], []
 
-    corpus_tokens = [_tokenize(t) for t in other_texts]
-    corpus_tokens = [t for t in corpus_tokens if t]
+    max_overlap_pct = 0.0
+    best_shared_words: list[str] = []
+    
+    # Track all matches with overlap >= 15%
+    matches: list[tuple[str, float, list[str]]] = []
 
-    if not corpus_tokens:
-        return 0.0
+    new_counts: dict[str, int] = {}
+    for t in new_tokens:
+        new_counts[t] = new_counts.get(t, 0) + 1
 
-    bm25 = BM25Okapi(corpus_tokens)
-    scores = bm25.get_scores(new_tokens)
-    max_score = float(max(scores))
+    for student_id, old_text in other_submissions.items():
+        old_tokens = _tokenize(old_text)
+        if not old_tokens:
+            continue
 
-    # Self-similarity baseline for normalization
-    self_bm25 = BM25Okapi([new_tokens])
-    self_scores = self_bm25.get_scores(new_tokens)
-    self_score = float(self_scores[0])
+        old_counts: dict[str, int] = {}
+        for t in old_tokens:
+            old_counts[t] = old_counts.get(t, 0) + 1
 
-    if self_score == 0:
-        return 0.0
+        shared_words_count = 0
+        shared_words: dict[str, int] = {}
+        for word, count in new_counts.items():
+            if word in old_counts:
+                overlap = min(count, old_counts[word])
+                shared_words_count += overlap
+                shared_words[word] = overlap
 
-    plagiarism_pct = min(100.0, (max_score / self_score) * 100.0)
-    return plagiarism_pct
+        overlap_pct = (shared_words_count / len(new_tokens)) * 100.0
+        
+        if overlap_pct >= 15.0:
+            current_keywords = [
+                w for w, _ in sorted(shared_words.items(), key=lambda x: x[1], reverse=True)[:15]
+            ]
+            matches.append((student_id, overlap_pct, current_keywords))
+
+        if overlap_pct > max_overlap_pct:
+            max_overlap_pct = overlap_pct
+            best_shared_words = [
+                w for w, _ in sorted(shared_words.items(), key=lambda x: x[1], reverse=True)[:15]
+            ]
+
+    # Sort matches by percentage descending
+    matches.sort(key=lambda x: x[1], reverse=True)
+    similar_ids = [m[0] for m in matches]
+
+    return round(min(100.0, max_overlap_pct), 1), best_shared_words, similar_ids
+

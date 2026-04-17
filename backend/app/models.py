@@ -11,6 +11,8 @@ class Submission(BaseModel):
     draft_feedback: Optional[str] = None
     plagiarism_risk_score: float = 0.0
     plagiarism_flagged: bool = False
+    plagiarism_matched_keywords: list[str] = []
+    plagiarism_most_similar_to: list[str] = []
     uploaded_at: str = ""
     graded_at: Optional[str] = None
 
@@ -51,6 +53,8 @@ class SubmissionOut(BaseModel):
     draft_feedback: Optional[str] = None
     plagiarism_risk_score: float
     plagiarism_flagged: bool
+    plagiarism_matched_keywords: list[str] = []
+    plagiarism_most_similar_to: list[str] = []
     graded_at: Optional[str] = None
 
 

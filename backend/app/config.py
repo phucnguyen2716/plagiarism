@@ -12,5 +12,5 @@ SUBMISSIONS_FILE = DATA_DIR / "submissions.json"
 DATA_DIR.mkdir(exist_ok=True)
 UPLOADS_DIR.mkdir(exist_ok=True)
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyD_bT_KC3YhaofdOcyr39cjumMDslr4DJA")
 GEMINI_MODEL = "gemini-3-flash-preview"
