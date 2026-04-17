@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import type { Submission } from "../types";
 import { gradeSubmission } from "../api/client";
 import PlagiarismBadge from "./PlagiarismBadge";
@@ -76,7 +76,7 @@ export default function SubmissionsTable({ submissions, onGradeComplete }: Submi
             const keywords = sub.plagiarism_matched_keywords ?? [];
 
             return (
-              <>
+              <Fragment key={sub.student_id}>
                 {/* Data row */}
                 <tr key={`${sub.student_id}-data`}>
                   <td style={{ fontWeight: 600, color: "var(--accent)" }}>
@@ -204,7 +204,7 @@ export default function SubmissionsTable({ submissions, onGradeComplete }: Submi
                     </button>
                   </td>
                 </tr>
-              </>
+              </Fragment>
             );
           })}
         </tbody>

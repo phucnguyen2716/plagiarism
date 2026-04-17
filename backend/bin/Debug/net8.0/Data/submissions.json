@@ -1,0 +1,71 @@
+{
+  "S97233232": {
+    "student_id": "S97233232",
+    "filename": "S97233232_Nick.pdf",
+    "extracted_text": "Part 1: Estimating: Testing an Online Ordering System (Fahasa) 1. Detailed Test Scenarios... [Same as original]",
+    "score": 30,
+    "draft_feedback": "The submission provides a comprehensive set of test scenarios for the Fahasa online ordering system, demonstrating a good understanding of functional requirements and edge cases. However, as a Capstone Project submission, it lacks critical academic components such as a formal problem statement, system architecture diagrams, and a justification of the methodology used. To improve, you must include evidence of actual implementation results and a concluding section that reflects on the project\u0027s achievements and limitations.",
+    "plagiarism_risk_score": 35.4,
+    "plagiarism_flagged": false,
+    "plagiarism_matched_keywords": [
+      "part",
+      "estimating",
+      "test",
+      "testing",
+      "system",
+      "online",
+      "ordering",
+      "fahasa",
+      "detailed",
+      "scenarios"
+    ],
+    "plagiarism_most_similar_to": [
+      "S11111111",
+      "S22222222"
+    ],
+    "uploaded_at": "2026-04-17T08:16:35.7333524Z",
+    "graded_at": "2026-04-17T09:40:41.6527282Z"
+  },
+  "S11111111": {
+    "student_id": "S11111111",
+    "filename": "S11111111_CopyCat.pdf",
+    "extracted_text": "Part 1: Estimating: Testing an Online Ordering System (Fahasa) 1. Detailed Test Scenarios. Comprehensive Test Cases ID Test Description Preconditions Steps Expected Result TC01 Search book Website ho\u1EA1t \u0111\u1ED9ng Nh\u1EADp t\u00EAn s\u00E1ch v\u00E0o search Hi\u1EC3n th\u1ECB k\u1EBFt qu\u1EA3 \u0111\u00FAng. Script 1 \u2013 Successfully order a book. Part 2: Test Plan Based on IEEE 829. Purpose: This document summarizes the testing strategy for the IdeaTrack system.",
+    "score": 10,
+    "draft_feedback": "The submission is significantly underdeveloped and lacks the depth required for a professional project report. There is a notable inconsistency between the systems mentioned (Fahasa vs. IdeaTrack), and the report fails to provide a clear problem statement, architectural design, or comprehensive testing results. To improve, you must expand on the system methodology, provide a complete suite of test cases beyond a single example, and ensure the documentation follows a professional structure with a clear conclusion and future work suggestions.",
+    "plagiarism_risk_score": 11.4,
+    "plagiarism_flagged": false,
+    "plagiarism_matched_keywords": [
+      "plan",
+      "ieee",
+      "829",
+      "ideatrack",
+      "testing",
+      "test",
+      "online",
+      "ordering",
+      "system",
+      "fahasa",
+      "detailed",
+      "scenarios"
+    ],
+    "plagiarism_most_similar_to": [
+      "S22222222",
+      "S97233232"
+    ],
+    "uploaded_at": "2026-04-17T09:30:00.000Z",
+    "graded_at": "2026-04-17T09:41:29.7030376Z"
+  },
+  "S22222222": {
+    "student_id": "S22222222",
+    "filename": "S22222222_Shared.pdf",
+    "extracted_text": "Introduction to Software Testing. Testing an Online Ordering System like Fahasa requires detailed test scenarios. We will use Selenium and Edge driver to automate scripts. Test Plan follows IEEE 829 standards for IdeaTrack. Authentication via Google OAuth.",
+    "score": null,
+    "draft_feedback": "",
+    "plagiarism_risk_score": 0,
+    "plagiarism_flagged": false,
+    "plagiarism_matched_keywords": [],
+    "plagiarism_most_similar_to": [],
+    "uploaded_at": "2026-04-17T09:35:00.000Z",
+    "graded_at": null
+  }
+}

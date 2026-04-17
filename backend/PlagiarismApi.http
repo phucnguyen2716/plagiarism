@@ -1,0 +1,6 @@
+@PlagiarismApi_HostAddress = http://localhost:5103
+
+GET {{PlagiarismApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
